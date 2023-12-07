@@ -1,9 +1,5 @@
 const fs = require("fs");
 
-function soma(a, b) {
-  return a + b;
-}
-
 function mdLinks(caminhoArquivo, options) {
   return new Promise(function (resolve, reject) {
     fs.readFile(caminhoArquivo, "utf8", (err, data) => {
