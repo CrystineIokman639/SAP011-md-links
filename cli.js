@@ -1,15 +1,18 @@
-const { soma, lerArquivo } = require('./index.js');
-const chalk = require('chalk');
+#!/usr/bin/env	node
+// console.log('Oi,	CLI!');
 
-const resultado = soma (1, 2);
+// const { soma, lerArquivo } = require('./index.js');
+// const chalk = require('chalk');
 
-console.log(chalk.bgRed('a soma é: ')), (chalk.red(resultado));
+// const resultado = soma (1, 2);
 
-const caminhoArquivo = process.argv[2]
-lerArquivo(caminhoArquivo)
-.then((conteudoArquivo) => {
-    console.log(chalk.bgGreen(conteudoArquivo))
-});
+// console.log(chalk.bgRed('a soma é: ')), (chalk.bgGreen(resultado));
 
-const inputs = process.argv
-console.log(inputs);
+// const caminhoArquivo = process.argv[2]
+// lerArquivo(caminhoArquivo)
+// .then((conteudoArquivo) => {
+//     console.log(chalk.bgGreen(conteudoArquivo))
+// });
+
+// const inputs = process.argv
+// console.log(inputs);
