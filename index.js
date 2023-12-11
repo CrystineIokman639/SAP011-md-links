@@ -18,7 +18,7 @@ function mdLinks(caminhoArquivo, options) {
       } else {
         const linksValidates = links.map(link => {
             return fetch(link.href).then(response =>{
-              links.status = response.status
+              link.status = response.status
               if (response.status >= 200 && response.status <= 299){
                 link.ok = 'Ok'
               } else {
@@ -37,8 +37,6 @@ function mdLinks(caminhoArquivo, options) {
     }
     });
   });
-}
-
-mdLinks("./readHere.md", {validate:true}).then(result => console.log(result)) //pede aqui pra ele ler
+};
 
 module.exports = { mdLinks };

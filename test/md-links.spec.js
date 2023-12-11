@@ -1,4 +1,4 @@
-const mdLinks = require("../index.js");
+const { mdLinks } = require("../index.js");
 
 describe("mdLinks", () => {
   it("Deveria retornar links extraídos sem validação quando validate for false", () => {
@@ -6,24 +6,18 @@ describe("mdLinks", () => {
       expect(links).toStrictEqual([
         {
           href: "https://pt.wikipedia.org/wiki/Markdownhttps://www.crunchyroll.com/pt-br/series/GRDV0019R/jujutsu-kaisen",
-          text: "Meu anime preferido",
-          file: "./oneFile.md",
-          status: "200",
-          ok: "ok",
+          text: "Jujutsu Kaisen",
+          file: "./readHere.md",
         },
         {
           href: "https://www.sleep-token.com",
-          text: "Minha banda preferida",
-          file: "./oneFile.md",
-          status: "200",
-          ok: "ok",
+          text: "Sleep Token",
+          file: "./readHere.md",
         },
         {
           href: "https://pt.wikipedia.org/wiki/heuehehuehuheuheu",
-          text: "Um link quebrado",
-          file: "./oneFile.md",
-          status: "200",
-          ok: "ok",
+          text: "Quebrou",
+          file: "./readHere.md",
         },
       ]);
     });
@@ -34,30 +28,29 @@ describe("mdLinks", () => {
       Promise.resolve({
         status: 200,
       }));
-    
 
     return mdLinks("./readHere.md", { validate: true }).then((links) => {
       expect(links).toStrictEqual([
         {
           href: "https://pt.wikipedia.org/wiki/Markdownhttps://www.crunchyroll.com/pt-br/series/GRDV0019R/jujutsu-kaisen",
-          text: "Meu anime preferido",
-          file: "./oneFile.md",
-          status: "200",
-          ok: "ok",
+          text: "Jujutsu Kaisen",
+          file: "./readHere.md",
+          status: 200,
+          ok: "Ok",
         },
         {
           href: "https://www.sleep-token.com",
-          text: "Minha banda preferida",
-          file: "./oneFile.md",
-          status: "200",
-          ok: "ok",
+          text: "Sleep Token",
+          file: "./readHere.md",
+          status: 200,
+          ok: "Ok",
         },
         {
           href: "https://pt.wikipedia.org/wiki/heuehehuehuheuheu",
-          text: "Um link quebrado",
-          file: "./oneFile.md",
-          status: "200",
-          ok: "ok",
+          text: "Quebrou",
+          file: "./readHere.md",
+          status: 200,
+          ok: "Ok",
         },
       ]);
     });
@@ -74,24 +67,24 @@ describe("mdLinks", () => {
       expect(links).toStrictEqual([
         {
           href: "https://pt.wikipedia.org/wiki/Markdownhttps://www.crunchyroll.com/pt-br/series/GRDV0019R/jujutsu-kaisen",
-          text: "Meu anime preferido",
-          file: "./oneFile.md",
-          status: "404",
-          ok: "fail",
+          text: "Jujutsu Kaisen",
+          file: "./readHere.md",
+          status: 404,
+          ok: "Fail",
         },
         {
           href: "https://www.sleep-token.com",
-          text: "Minha banda preferida",
-          file: "./oneFile.md",
-          status: "404",
-          ok: "fail",
+          text: "Sleep Token",
+          file: "./readHere.md",
+          status: 404,
+          ok: "Fail",
         },
         {
           href: "https://pt.wikipedia.org/wiki/heuehehuehuheuheu",
-          text: "Um link quebrado",
-          file: "./oneFile.md",
-          status: "404",
-          ok: "fail",
+          text: "Quebrou",
+          file: "./readHere.md",
+          status: 404,
+          ok: "Fail",
         },
       ]);
     });
@@ -104,24 +97,18 @@ describe("mdLinks", () => {
       expect(links).toStrictEqual([
         {
           href: "https://pt.wikipedia.org/wiki/Markdownhttps://www.crunchyroll.com/pt-br/series/GRDV0019R/jujutsu-kaisen",
-          text: "Meu anime preferido",
-          file: "./oneFile.md",
-          status: "404",
-          ok: "fail",
+          text: "Jujutsu Kaisen",
+          file: "./readHere.md",
         },
         {
           href: "https://www.sleep-token.com",
-          text: "Minha banda preferida",
-          file: "./oneFile.md",
-          status: "404",
-          ok: "fail",
+          text: "Sleep Token",
+          file: "./readHere.md",
         },
         {
           href: "https://pt.wikipedia.org/wiki/heuehehuehuheuheu",
-          text: "Um link quebrado",
-          file: "./oneFile.md",
-          status: "404",
-          ok: "fail",
+          text: "Quebrou",
+          file: "./readHere.md",
         },
       ]);
     });
